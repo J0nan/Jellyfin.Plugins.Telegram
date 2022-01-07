@@ -21,6 +21,7 @@ namespace Jellyfin.Plugins.Telegram
     {
         private readonly IHttpClientFactory _httpClientFactory;
         private readonly ILogger<Notifier> _logger;
+        private string message;
 
         public Notifier(ILogger<Notifier> logger, IHttpClientFactory httpClientFactory)
         {
@@ -49,10 +50,15 @@ namespace Jellyfin.Plugins.Telegram
         {
             var options = GetOptions(request.User);
 
+            message = request.Name + 
+                      "<b> Descirption:</b> " + request.Description + 
+                      "<b> " + request.Level + " </b>" +
+                      request.Date;
+
             await Notifier.SendNotification(
                 _httpClientFactory,
                 options.Token, options.ChatId, options.SilentNotificationEnabled,
-                string.IsNullOrEmpty(request.Description) ? request.Name : request.Description
+                message
             );
         }
 
