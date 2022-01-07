@@ -18,7 +18,7 @@ jobs:
           - kind: macOS
             os: macos-latest
             target: osx-x64
-    runs-on: ${{ matrix.os }
+    runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout
         uses: actions/checkout@v1
@@ -37,12 +37,13 @@ jobs:
 
           # Build everything
           dotnet publish Jellyfin.Plugins.Telegram/Jellyfin.Plugins.Telegram.csproj --runtime "${{ matrix.target }}" -c Release -o "$release_name"
+          
 
           # Pack files
           if [ "${{ matrix.target }}" == "win-x64" ]; then
-            7z a -tzip "${release_name}.zip" "./${release_name}/*"
+            7z a -tzip "${release_name}.zip" "./${release_name}/Jellyfin.Plugins.Telegram*"
           else
-            tar czvf "${release_name}.tar.gz" "$release_name"
+            tar czvf "${release_name}.tar.gz" ${release_name}/Jellyfin.Plugins.Telegram*
           fi
 
           # Delete output directory
