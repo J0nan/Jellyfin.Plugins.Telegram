@@ -51,7 +51,7 @@ namespace Jellyfin.Plugins.Telegram
             var options = GetOptions(request.User);
 
             message = request.Name + 
-                      "<b> Descirption:</b> " + request.Description + 
+                      "<b> Description:</b> " + request.Description + 
                       "<b> " + request.Level + " </b>" +
                       request.Date;
 
