@@ -3,6 +3,13 @@ Telegram bot Notification Agent for Jellyfin
 
 Get started with Jellyfin at https://jellyfin.github.io/
 
+## How to install
+* Download the latests release
+* Extract it
+* Create a folder in the plugins folder. On windows it is usually in `C:\ProgramData\Jellyfin\Server\plugins`
+* Copy the extracted files to the new folder
+* Reboot Jellyfin
+
 ## How to use
 
 * Create a bot (or use an existing one). You can use the `/newbot` command of BotFather for this. Make sure to copy the access token.
