@@ -1,6 +1,6 @@
 # Jellyfin.Plugins.Telegram
 
-AS OF JELLYFIN 10.9 THIS NO LONGER WORKS
+⚠⚠ AS OF JELLYFIN 10.9 THIS NO LONGER WORKS ⚠⚠
 
 Telegram bot Notification Agent for Jellyfin
 
