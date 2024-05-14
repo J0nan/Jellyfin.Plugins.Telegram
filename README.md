@@ -1,4 +1,7 @@
 # Jellyfin.Plugins.Telegram
+
+AS OF JELLYFIN 10.9 THIS NO LONGER WORKS
+
 Telegram bot Notification Agent for Jellyfin
 
 Get started with Jellyfin at https://jellyfin.github.io/
